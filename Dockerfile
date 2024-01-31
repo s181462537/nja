@@ -11,9 +11,6 @@ RUN version=$(basename $(curl -sL -o /dev/null -w %{url_effective} https://githu
 ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=C
 
 RUN cp ninja /bin/ninja
-RUN mkdir /.gpt3 && chmod 777 /.gpt3
-RUN mkdir /.gpt4 && chmod 777 /.gpt4
-RUN mkdir /.auth && chmod 777 /.auth
-RUN mkdir /.platform && chmod 777 /.platform
+RUN mkdir /.ninja && chmod 777 /.ninja
 
 CMD ["/bin/ninja","run"]
