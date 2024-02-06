@@ -8,9 +8,9 @@ RUN version=$(basename $(curl -sL -o /dev/null -w %{url_effective} https://githu
     && tar -xzf ninja.tar.gz
 
 
-ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=C
+ENV LANG=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive LANGUAGE=en_US.UTF-8 LC_ALL=C
 
 RUN cp ninja /bin/ninja
 RUN mkdir /.ninja && chmod 777 /.ninja
 
-CMD ["/bin/ninja","run"]
+CMD ["/bin/ninja", "run", "--enable-webui", "--arkose-endpoint"]
