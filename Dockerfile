@@ -13,4 +13,6 @@ ENV LANG=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive LANGUAGE=en_US.UTF-8 LC_ALL=
 RUN cp ninja /bin/ninja
 RUN mkdir /.ninja && chmod 777 /.ninja
 
-CMD ["/bin/ninja", "run", "--enable-webui", "--arkose-endpoint", "https://nja-fviv.onrender.com/", "--level", "info", "--bind", "0.0.0.0:7999", "--enable-direct"]
+RUN rm -rf /root/.ninja
+
+CMD ["/bin/ninja","run", "--arkose-endpoint", "https://nja-fviv.onrender.com", "--enable-webui"]
